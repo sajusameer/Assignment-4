@@ -16,7 +16,7 @@ const filterSection = document.getElementById('filtered-section')
 
 
 function calculateCount() {
-    total.innerText = allCardSection.children.length //3
+    total.innerText = allCardSection.children.length 
     interviewCount.innerText = interviewList.length
     rejectedCount.innerText = rejectedList.length
 }
@@ -26,7 +26,7 @@ calculateCount()
 
 // step 1;
 function toggleStyle(id) {
-    // adding gray bg for all
+    // adding white bg for all
     allFilterBtn.classList.add('bg-white', 'text-gray-600')
     interviewFilterBtn.classList.add('bg-white', 'text-gray-600')
     rejectFilterBtn.classList.add('bg-white', 'text-gray-600')
@@ -43,14 +43,14 @@ function toggleStyle(id) {
     console.log(currentStatus);
     // console.log(selected);
 
-    // adding black bg for current button
+    // adding  bg for current button
     selected.classList.remove('bg-white', 'text-gray-600')
     selected.classList.add('bg-blue-900', 'text-white')
     // step 1 finish
 
     // show and hidden particular section
     // step 4 start
-    // filtering while clicking the filter button (All, Thriving, Struggling)
+    // filtering while clicking the filter button (All, Interview, Rejected)
     if (id == 'interview-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
@@ -95,7 +95,7 @@ mainContainer.addEventListener('click', function (event) {
         }
 
         // step 2 finish
-        // removing the plant from struggling list
+        // removing the plant from rejected list
         rejectedList = rejectedList.filter(item => item.companyName != cardInfo.companyName)
 
         // after remove rerender the html
@@ -133,10 +133,10 @@ mainContainer.addEventListener('click', function (event) {
             rejectedList.push(cardInfo)
         }
 
-        // removing the plant from thriving list
+        // removing the plant from interview list
         interviewList = interviewList.filter(item => item.companyName != cardInfo.companyName)
 
-        // console.log(thrivingList);
+        // console.log(interviewList);
 
         // after remove rerender the html
         if (currentStatus == "interview-filter-btn") {
@@ -245,8 +245,8 @@ function renderRejected() {
 
 
 
+// empty image
 
-// delete-btn
 function checkEmptyState() {
   const cards = document.querySelectorAll(".job-card");
 
@@ -288,6 +288,8 @@ function checkEmptyState() {
 // });
 
 // working only total
+
+// delete-btn
 const allCards = document.getElementById("allCards");
 
 allCards.addEventListener("click", function (event) {
@@ -302,6 +304,7 @@ allCards.addEventListener("click", function (event) {
 
         interviewList = interviewList.filter(item => item.companyName !== companyName);
         rejectedList = rejectedList.filter(item => item.companyName !== companyName);
+        
 
         calculateCount();
         checkEmptyState();
