@@ -158,7 +158,7 @@ function renderInterview() {
         console.log(interview);
 
         let div = document.createElement('div');
-        div.className = 'card flex justify-between border p-8 job-card'
+        div.className = 'card flex flex-col md:flex-row md:justify-between shadow p-6 md:p-8 job-card gap-6'
         div.innerHTML = `
          <!-- main part 1 -->
                 <div class="space-y-6">
@@ -201,7 +201,7 @@ function renderRejected() {
     for (let rejected of rejectedList) {
 
         let div = document.createElement('div');
-        div.className = 'card flex justify-between shadow p-8 job-card'
+        div.className = 'card flex flex-col md:flex-row md:justify-between shadow p-6 md:p-8 job-card gap-6'
         div.innerHTML = `
          <!-- main part 1 -->
                 <div class="space-y-6">
@@ -262,34 +262,13 @@ function checkEmptyState() {
   }
 }
 
-// document.querySelectorAll(".delete-btn").forEach(btn => {
-//   btn.addEventListener("click", function () {
 
-//     const card = this.closest(".job-card");
-//     card.remove();
-
-//     checkEmptyState();   
-//     updateDashboard();
-//     filterCards(currentTab);
-
-//   });
-// });
-// document.querySelectorAll(".interview-btn").forEach(btn => {
-//   btn.addEventListener("click", function () {
-
-//     const card = this.closest(".job-card");
-//     card.remove();
-
-//     checkEmptyState();   
-//     updateDashboard();
-//     filterCards(currentTab);
-
-//   });
-// });
 
 // working only total
 
 // delete-btn
+// its working
+// 
 const allCards = document.getElementById("allCards");
 
 allCards.addEventListener("click", function (event) {
@@ -311,3 +290,31 @@ allCards.addEventListener("click", function (event) {
     }
 
 });
+
+
+
+
+
+
+// const allCards = document.getElementById("mainContainer");
+
+// allCards.addEventListener("click", function (event) {
+
+//     if (event.target.closest(".delete-btn")) {
+
+//         const card = event.target.closest(".job-card");
+//         card.remove();
+//         alert("Are you sure?")
+
+//         const companyName = card.querySelector(".companyName").innerText;
+
+//         interviewList = interviewList.filter(item => item.companyName !== companyName);
+//         rejectedList = rejectedList.filter(item => item.companyName !== companyName);
+//         jobList = jobList.filter(item == item.companyName !== companyName);
+        
+
+//         calculateCount();
+//         checkEmptyState();
+//     }
+
+// });
