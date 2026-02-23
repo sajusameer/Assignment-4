@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-     <header class="w-[70%] mx-auto mt-10">
+     <header class="w-[90%] sm:w-[85%] md:w-[75%] lg:w-[70%] mx-auto mt-10">
         <h1 class="text-3xl font-bold mb-4">Job Application Tracker</h1>
         <!-- dashboard -->
         <div class="grid grid-cols-3 gap-8">
@@ -44,7 +44,7 @@
 
      <hr class="w-[70%] my-5 mx-auto border-gray-300">
 
-     <main class="w-[70%] mx-auto">
+     <main class="w-[90%] sm:w-[85%] md:w-[75%] lg:w-[70%] mx-auto" id="mainContainer" id="mainContainer">
         <div class="mb-6 mr-4">
             <button onclick="toggleStyle('all-filter-btn')"  class="bg-blue-900 text-white px-8 py-2 shadow mr-4 rounded-sm" id="all-filter-btn">All</button>
             <button onclick="toggleStyle('interview-filter-btn')"  class="bg-white mr-4 px-5 py-2 shadow text-gray-600 rounded-sm" id="interview-filter-btn">Interview</button>
@@ -54,6 +54,22 @@
     <section id="filtered-section" class="hidden">
 
         </section> 
+
+        <section id="emptyState"
+         class="hidden flex flex-col items-center justify-center py-24 bg-gray-100 rounded-xl mt-6">
+
+    <img src="jobs.png"
+         class="w-32 mb-6 opacity-80">
+
+    <h3 class="text-xl font-semibold mb-2">
+        No jobs available
+    </h3>
+
+    <p class="text-gray-500 text-sm">
+        Check back soon for new job opportunities
+    </p>
+
+</section>
 
         <section id="allCards" class="space-y-6">
 
@@ -107,7 +123,7 @@
 
                     </div>
                     <!-- part 3 -->
-                     <p class="status w-[15%] bg-blue-100 py-2 px-4">NOT Applied</p>
+                     <p class="status w-[15%] bg-blue-100 py-2 px-4">Not Applied</p>
                      <p class="notes text-gray-800">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
                      <div class="flex gap-5">
